@@ -14,6 +14,8 @@ class ToysController < ApplicationController
   def update
     toy = Toy.find_by(id: params[:id])
     toy.update(toy_params)
+    render json: toy, status: :accepted
+    #you can also use ok as the status
   end
 
   def destroy
